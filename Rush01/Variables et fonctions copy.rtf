@@ -1,0 +1,85 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue10;}
+{\*\expandedcolortbl;;\cssrgb\c99942\c98555\c0;}
+\margl1440\margr1440\vieww24160\viewh24080\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 \ul \ulc0 Si un membre du groupe a une nouvelle id\'e9e ou veut proposer un changement dans la sainte Bible, il peut le faire en fin de document apr\'e8s la ligne. Sinon notre col\'e8re sera terrible :D:D:D\
+\
+Variables\ulnone \
+\
+Int *views;\
+Int map_length;\
+Int *map;\
+\
+\ul Fonctions\
+\
+\cf2 \ulnone Int *col_views(Int *views, Int map_length);\
+Return: (Int *tab) - Ce tableau contiendra la col view up en tab[0] et la col view down en tab[1]\
+\
+Int *row_views(Int *views, Int map_length);\
+Return: (Int *tab) - Ce tableau contiendra la row view left en tab[0] et la row view right en tab[1]\
+\
+Int *col_content(Int *map, Int col);\
+Return: (Int *tab_col) - Ce tableau contient les valeurs de la col de up vers down.\
+\
+Int *row_content(Int *map, Int row);\
+Return: (Int *tab_row) - Ce tableau contient les valeurs de la row de left vers right.\cf0 \
+\
+Void print_result(Int *map); - 
+\f1\b Merlin
+\f0\b0 \
+Return: (Void) - Cette fonction pointera a l\'92\'e9cran le r\'e9sultat selon les prescriptions du subject\
+\
+Int *initialize_map(Int map_length); - 
+\f1\b Thomas
+\f0\b0 \
+Return: (Int *tab) - Cette fonction alloue la memoire pour g\'e9n\'e9rer la map et rempli tous les squares de 0\
+\
+Void check_if_error_before_start(*views, Int map_length); - 
+\f1\b Thomas
+\f0\b0 \
+Return: (Void) - Cette fonction v\'e9rifie si les param\'e8tres entres au lancement du programme respectent bien les r\'e8gles \'e9tablies. Dans le cas contraire, il affichera le message d\'92erreur d\'e9fini dans le subject.\
+\
+Int *Initialize_views(Int map_length, char *argv) - 
+\f1\b Thomas
+\f0\b0 \
+Return: (Int *views) - Cette fonction r\'e9cup\'e9rer les informations contenues dans argv et les stocke dans un tableau de (map_length * map_length). Si les informations contenues dans argv ne sont pas prototypes comme d\'e9fini dans le subject, la fonction renvoie un tableau d\'92une case contenant la valeur -1.\
+\
+_________________________________________________________________\
+\
+Int check_if_col_correct(Int *map, Int *views, Int col); - 
+\f1\b Marco
+\f0\b0 \
+Return: (Int 1 ou 0) - Cette fonction v\'e9rifie si une combinaison est valide pour la colonne donn\'e9e. Cette fonction n\'e9cessite que tous les chiffres sur une colonne donn\'e9e soient diff\'e9rents de 0.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 Int check_if_row_correct(Int *map, Int *views, Int row); - 
+\f1\b Marco
+\f0\b0 \
+Return: (Int 1 ou 0) - Cette fonction v\'e9rifie si une combinaison est valide pour la row donn\'e9e. Cette fonction n\'e9cessite que tous les chiffres sur une colonne donn\'e9e soient diff\'e9rents de 0.\
+\
+Int apply_recurrent_rules(Int *map, Int *views) - 
+\f1\b Thomas
+\f0\b0 \
+Return: (Int *map) - Cette fonction v\'e9rifie si des positions globales sur la map permettent de d\'e9duire les nombre de certains squares. Elle permet de d\'e9duire un 4eme nombre sur une col ou une row en disposant des 3 autres. Elle permet \'e9galement de d\'e9duire la position d\'92une valeur sur la map en connaissant la position des 3 autres valeurs identiques sur la map.\
+\
+Int apply_level_1_rules(Int *map, Int *views) - 
+\f1\b Merlin
+\f0\b0 \
+Return: (Int *map) - Cette fonction v\'e9rifie si les views contiennent des 1 ou des 4 et compl\'e8tent la map en consequence.\
+\
+Int apply_level_2_rules(Int *map, Int *views)\
+Return: (Int *map) - Cette fonction v\'e9rifie les positions de deux views qui acceptent une solution generale:\
+	- les views 2 qui font face a une view 1 doivent placer un 3 sur la premiere case de la map leur faisant face\
+	- les views 2 qui font face a une view 3 doivent place un 4 sur la deuxi\'e8me case de la map leur faisant face\
+	- les views 2 qui font face a un 4 sur le square oppose doivent placer un 3 sur la premiere case de la map leur faisant face\
+\
+Int apply_level_3_rules(Int *map, Int *views) - 
+\f1\b Marco
+\f0\b0 \
+Return: (Int *map) - Cette fonction v\'e9rifie les col et les row contenant deja 2 squares complets. Elle teste les deux solutions possibles et inscrits les nombres ad\'e9quats dans les squares lorsqu\'92une seule solution est v\'e9rifie comme valide.\
+\
+\
+}

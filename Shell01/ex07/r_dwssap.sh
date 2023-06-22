@@ -1,0 +1,1 @@
+cat /etc/passwd | awk -F\# '$1!="" { print $1 ;} ' | tail -n +2 | awk '(NR%2==1)' | awk -F '\\:' '{print $1}' | rev | sort --reverse | awk 'NR >= 7 && NR <= 15' | tr "\n" "," | sed '$ s/.$//' | sed 's/$/./'
