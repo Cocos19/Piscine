@@ -1,0 +1,43 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww34920\viewh20560\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 \ul \ulc0 Si un membre du groupe a une nouvelle id\'e9e ou veut proposer un changement dans la sainte Bible, il peut le faire en fin de document apr\'e8s la ligne. Sinon notre col\'e8re sera terrible :D:D:D\
+\
+Variables\ulnone \
+\
+Int *views;\
+Int map_length;\
+Int *map;\
+\
+\ul Fonctions\
+\
+\ulnone Int *col_views(Int *views, Int map_length);\
+Return: (Int *tab) - Ce tableau contiendra la col view up en tab[0] et la col view down en tab[1]\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 Int *row_views(Int *views, Int map_length);\
+Return: (Int *tab) - Ce tableau contiendra la row view left en tab[0] et la row view rigth en tab[1]\
+\
+Int *col_content(Int *map, Int col);\
+Return: (Int *tab) - Ce tableau contient les valeurs de la col de up vers down.\
+\
+Int *row_content(Int *map, Int row);\
+Return: (Int *tab) - Ce tableau contient les valeurs de la row de left vers rigth.\
+\
+Void print_result(Int *map);\
+Return: (Void) - Cette fonction pointera a l\'92\'e9cran le r\'e9sultat selon les prescriptions du subject\
+\
+Int *initialize_map(Int map_length);\
+Return: (Int *tab) - Cette fonction alloue la memoire pour g\'e9n\'e9rer la map et rempli tous les squares de 0\
+\
+Void check_if_error_before_start(*views, Int map_size);\
+Return: (Void) - Cette fonction v\'e9rifie si les param\'e8tres entres au lancement du programme respectent bien les r\'e8gles \'e9tablies. Dans le cas contraire, il affichera le message d\'92erreur d\'e9fini dans le subject.\
+\
+Int *Initialize_views(Int map_length, char *argv)\
+Return: (Int *views) - Cette fonction r\'e9cup\'e9rer les informations contenues dans argv et les stocke dans un tableau de (map_length * map_length). Si les informations contenues dans argv ne sont pas prototypes comme d\'e9fini dans le subject, la fonction renvoie un tableau d\'92une case contenant la valeur -1.\
+\
+_________________________________________________________________}
